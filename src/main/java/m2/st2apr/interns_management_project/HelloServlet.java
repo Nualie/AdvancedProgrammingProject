@@ -9,9 +9,9 @@ import jakarta.servlet.annotation.*;
 import model.InternEntity;
 import model.InternSB;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
+@WebServlet(name = "helloServlet", urlPatterns = {"/display", "/hello-servlet"})
 public class HelloServlet extends HttpServlet {
-    private String message;
+    private String message = "placeholder";
     @EJB
     private InternSB internSB;
     public void init() {
@@ -20,13 +20,12 @@ public class HelloServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         List<InternEntity> allInterns = internSB.getInterns();
-        for (InternEntity intern : allInterns){
-            System.out.println("SHOW LAST NAME : "+ intern.getLastname());
+        request.setAttribute("internList", allInterns);
+        System.out.print(message);
     }
 
-
-    }
     public void destroy() {
 
     }
 }
+
