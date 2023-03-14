@@ -1,15 +1,16 @@
 package servlet;
 
-import java.io.*;
+import java.io.IOException;
 import java.util.List;
 
 import jakarta.ejb.EJB;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import model.InternsEntity;
+import model.InternEntity;
 import model.InternSB;
 
-@WebServlet(name = "helloServlet", urlPatterns = {"/display", "/hello-servlet", "/index"})
+@WebServlet("/display")
 public class HelloServlet extends HttpServlet {
     private String message = "placeholder";
     @EJB
@@ -18,10 +19,10 @@ public class HelloServlet extends HttpServlet {
         message = "Hello World!";
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) {
-        List<InternsEntity> allInterns = internSB.getInterns();
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<InternEntity> allInterns = internSB.getInterns();
         request.setAttribute("internList", allInterns);
-        System.out.print(message);
+        request.getRequestDispatcher("/display.jsp").forward(request,response);
     }
 
     public void destroy() {

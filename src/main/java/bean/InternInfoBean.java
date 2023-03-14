@@ -1,13 +1,13 @@
 package bean;
 
-import model.InternsEntity;
+import model.InternEntity;
 
 public class InternInfoBean {
     private String email;
     private String name;
     private String firstname;
 
-    public static InternInfoBean Beanify(InternsEntity intern){
+    public static InternInfoBean Beanify(InternEntity intern){
         InternInfoBean bean = new InternInfoBean();
         bean.setEmail(intern.getEmail());
         bean.setName(intern.getLastname());

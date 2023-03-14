@@ -6,8 +6,8 @@
     <persistence-unit name="default">
 
         <class>oldmodel.InternEntity</class>
-        <class>model.InternsEntity</class>
-        <class>model.TutorsEntity</class>
+        <class>model.InternEntity</class>
+        <class>model.TutorEntity</class>
         <properties>
             <property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306/advancedprogramming"/>
             <property name="toplink.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="bean.InternInfoDao" %>
+<%@ page import="static java.sql.DriverManager.println" %>
 <jsp:useBean id="obj" class="bean.InternInfoBean"/>
 <%@ include file="index.jsp" %>
 <jsp:setProperty property="*" name="obj"/>
@@ -13,24 +14,43 @@
 <!DOCTYPE html>
 <html>
 <body>
+<%if(sessionInvalid) println("You are not authorized to view this page");
+else {
+%>
 <form>
     <table>
         <tr>
             <td><b>Name</b></td>
             <td><b>First name</b></td>
             <td><b>Email</b></td>
+            <td><b>CDC</b></td>
+            <td><b>Email</b></td>
+            <td><b>Fiche Visite</b></td>
+            <td><b>Fiche Val Entree</b></td>
+            <td><b>Sondage Web</b></td>
+            <td><b>Rapport Rendu</b></td>
+            <td><b>Soutenance</b></td>
+            <td><b>Visite planifiee</b></td>
+            <td><b>Visite faite</b></td>
         </tr>
-
-        <c:forEach items="${InternInfoDao.InternInformation()}" var="intern">
+        <c:set var="id" scope="session" value="${sessionScope.get(\"tutorId\")}"/>
+        <c:forEach items="${InternInfoDao.InternInformation(id)}" var="intern">
             <tr>
-                <td>  ${intern.name}</td>
+                <td>  ${intern.lastname}</td>
                 <td>  ${intern.firstname}    </td>
-                <td>  ${intern.mail}  </td>
+                <td>  ${intern.email}  </td>
+                <td>  ${intern.cdc}  </td>
+                <td>  ${intern.fichevisite}  </td>
+                <td>  ${intern.ficheevalentree}  </td>
+                <td>  ${intern.sondageweb}  </td>
+                <td>  ${intern.rapportrendu}  </td>
+                <td>  ${intern.sout}  </td>
+                <td>  ${intern.visiteplanif}  </td>
+                <td>  ${intern.visitefaite}  </td>
             </tr>
         </c:forEach>
     </table>
-    <input type='submit' name="action" value="Detail"/>
 </form>
 </body>
 </html>
-
+<%}%>

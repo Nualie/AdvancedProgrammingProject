@@ -4,16 +4,15 @@
 <jsp:setProperty property="*" name="obj"/>
 
 <%
-  boolean status= LoginDao.validate(obj);  ; //TODO: implement log in process
+  boolean status= LoginDao.validate(obj);
   if(status){
-    out.println("Successfully logged in");
+    out.print("Successfully logged in!");
     session.setAttribute("session","TRUE");
+    session.setAttribute("user",LoginDao.getLogin(obj));
+    session.setAttribute("tutorId",LoginDao.getTutorId(obj));
   }
   else
   {
-    out.print("Sorry, email or password error");
+    out.print("Sorry, email or password error.");}
 %>
 <jsp:include page="index.jsp"></jsp:include>
-<%
-  }
-%>
