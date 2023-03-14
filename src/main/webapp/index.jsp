@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Index</title>
 </head>
 <body>
 <h1><%= "Hello World!" %>
@@ -11,5 +11,7 @@
 <a href="hello-servlet">Hello Servlet</a>
 <br/>
 <a href="display.jsp">List</a>
+<br/>
+<a href="login.jsp">Login</a>
 </body>
 </html>
