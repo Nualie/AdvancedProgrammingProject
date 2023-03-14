@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="694cf212-bd89-42ff-9eb7-f6ef14bea12a" name="DDL Mapping">
+      <data-sources db="9fd98551-80f3-43e8-9848-2083456a0c7f" ddl="42985aab-b746-4e5b-b488-5e0c310fb7bd" />
+      <scope>
+        <node kind="database" qname="@" />
+      </scope>
+    </mapping>
+  </component>
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="42985aab-b746-4e5b-b488-5e0c310fb7bd" />
+          <option name="name" value="Interns_database" />
+          <option name="dbmsName" value="MYSQL" />
+          <option name="urls">
+            <array>
+              <option value="file://$PROJECT_DIR$/Interns_database.sql" />
+            </array>
+          </option>
+          <option name="outLayout" value="File per object by schema.groovy" />
+          <option name="scopes">
+            <map>
+              <entry key="$PROJECT_DIR$" value="advancedprogramming" />
+            </map>
+          </option>
+        </State>
+        <State>
+          <option name="id" value="b1b82fe3-642a-45c3-8a80-998be3b03069" />
+          <option name="name" value="DDL data source" />
+          <option name="dbmsName" value="MYSQL" />
+          <option name="urls">
+            <array />
+          </option>
+          <option name="outLayout" value="File per object by schema.groovy" />
+        </State>
+      </list>
+    </option>
+  </component>
+</project>

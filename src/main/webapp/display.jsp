@@ -7,10 +7,8 @@
 --%>
 <%@ page import="bean.InternInfoDao" %>
 <jsp:useBean id="obj" class="bean.InternInfoBean"/>
-
+<%@ include file="index.jsp" %>
 <jsp:setProperty property="*" name="obj"/>
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
 <html>
