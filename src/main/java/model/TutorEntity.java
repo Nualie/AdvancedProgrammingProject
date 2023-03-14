@@ -16,13 +16,13 @@ public class TutorEntity {
     @Column(name = "HASHEDPASS", nullable = false)
     private int hashedpass;
     @Basic
-    @Column(name = "LASTNAME", nullable = true, length = 25)
+    @Column(name = "LASTNAME", nullable = false, length = 25)
     private String lastname;
     @Basic
-    @Column(name = "FIRSTNAME", nullable = true, length = 25)
+    @Column(name = "FIRSTNAME", nullable = false, length = 25)
     private String firstname;
     @Basic
-    @Column(name = "EMAIL", nullable = true, length = 25)
+    @Column(name = "EMAIL", nullable = false, length = 25)
     private String email;
 
     public int getId() {
@@ -80,19 +80,19 @@ public class TutorEntity {
         TutorEntity that = (TutorEntity) o;
 
         if (id != that.id) return false;
-        if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
-        if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
+        if (lastname != that.lastname) return false;
+        if (firstname != that.firstname) return false;
+        if (email != that.email) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 43 * result + (lastname != null ? lastname.hashCode() : 0);
-        result = 43 * result + (firstname != null ? firstname.hashCode() : 0);
-        result = 43 * result + (email != null ? email.hashCode() : 0);
+        int result = id ;
+        result = 43 * result + firstname.hashCode();
+        result = 43 * result + lastname.hashCode();
+        result = 43 * result + email.hashCode();
         result = 43 * result + login.hashCode();
         return result;
     }

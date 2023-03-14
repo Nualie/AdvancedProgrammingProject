@@ -18,6 +18,26 @@ public class InternEntity {
     @Basic
     @Column(name = "EMAIL", nullable = true, length = 25)
     private String email;
+    @Basic
+    @Column(name = "CDC", nullable = true)
+    private Boolean cdc;
+    @Basic
+    @Column(name = "FICHEVISITE", nullable = true)
+    private Boolean ficheVisite;
+    @Basic
+    @Column(name = "FICHEEVALENTREE", nullable = true)
+    private Boolean ficheEvalEntree;
+    @Basic
+    @Column(name = "RAPPORTRENDU", nullable = true)
+    private Boolean rapportRendu;
+    @Basic
+    @Column(name = "VISITEPLANIF", nullable = true)
+    private Boolean visitePlanif;
+    @Basic
+    @Column(name = "VISITEFAITE", nullable = true)
+    private Boolean visiteFaite;
+
+
 
     public int getId() {
         return id;
@@ -50,6 +70,30 @@ public class InternEntity {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public void setCdc(Boolean cdc) { this.cdc = cdc; }
+
+    public Boolean getCdc() { return cdc; }
+
+    public void setFicheVisite(Boolean ficheVisite) { this.ficheVisite = ficheVisite; }
+
+    public Boolean getFicheVisite() { return ficheVisite; }
+
+    public void setFicheEvalEntree(Boolean ficheEvalEntree) { this.ficheEvalEntree = ficheEvalEntree; }
+
+    public Boolean getFicheEvalEntree() { return ficheEvalEntree; }
+
+    public void setRapportRendu(Boolean rapportRendu) { this.rapportRendu = rapportRendu; }
+
+    public Boolean getRapportRendu() { return rapportRendu; }
+
+    public void setVisitePlanif(Boolean visitePlanif) { this.visitePlanif = visitePlanif; }
+
+    public Boolean getVisitePlanif() { return visitePlanif; }
+
+    public void setVisiteFaite(Boolean visiteFaite) { this.visiteFaite = visiteFaite; }
+
+    public Boolean getVisiteFaite() { return visiteFaite; }
 
     @Override
     public boolean equals(Object o) {
