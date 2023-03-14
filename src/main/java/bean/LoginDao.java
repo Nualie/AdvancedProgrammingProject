@@ -42,6 +42,7 @@ public class LoginDao {
         TutorEntity CheckLogin = findByEmail(bean.getEmail());
         if(CheckLogin == null) return false;
 
+        System.out.println(CheckLogin.hashPass("mypassword"));
         if(CheckLogin.getEmail().trim().equals(bean.getEmail()) && CheckLogin.testPass(bean.getPassword()))
         {status = true;}
 
